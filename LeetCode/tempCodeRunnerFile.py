@@ -1,0 +1,2 @@
+
+    print(solution.longestPalindrome('cbbd'))

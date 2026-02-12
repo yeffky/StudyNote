@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    // for (var a = 0; a < 10; a++) {
+    // }
+    // console.log(a);
+    // for (let b = 0; b < 10; b++) {
+    // }
+    // console.log(b);
+
+    // var a = 1;
+    // var a = 2; // 不会报错
+
+    // let b = 3;
+    // let b = 4; // 报错
+
+    // console.log(a); // undefined
+    // var a = 1;
+
+    // console.log(b); // 报错
+    // let b = 2;
+    // const PI = 3.1415926;
+    // PI = 3; // 报错
+    // const obj = {
+    //     name: '张三',
+    //     age: 18
+    // }
+    // obj.name = '李四'; // 不会报错
+    // console.log(obj);
+    // obj = {}; // 报错
+    // let s1 = Symbol('name');
+    // let s2 = Symbol('name');
+    // let obj = {
+    //     [s1]: '张三',
+    //     [s2]: '李四'
+    // }
+    // console.log(obj[s1]); // 张三
+    // console.log(obj[s2]); // 李四
+
+    // let obj = {
+    //     [Symbol('name')]: '张三',
+    //     age: 18, 
+    //     title: 'Engineer'
+    // }
+
+    // console.log(Object.keys(obj)); //Symbol无法取到，是私有属性
+
+    // console.log(Object.getOwnPropertySymbols(obj)); //Symbol可以取到
+    // console.log(Reflect.ownKeys(obj)); //Symbol可以取到
+
+    // let [a, ...b] = [1, 2, 3, 4]; // ...b表示剩余的元素
+    // console.log(b); // [2, 3, 4]
+    // let [a, b, c, d, e] = 'hello'; //可遍历对象都可以使用解构赋值
+    // console.log(a); // h
+
+    // let obj = {p : ['张三', {'age': 18}]};
+    // let {p: [x, {age}]} = obj;
+    // console.log(x); // 张三
+    // console.log(age); // 18
+    // let {a = 10, b = 5} = {a: 3}; // 解构默认值
+    // console.log(b); // 5
+
+    // //自执行函数
+    // (function (n1, n2) {
+    //     console.log(n1 + n2);
+    // }) (10, 100);
+
+    // (function (n1, n2) {
+    //     console.log(n1 + n2);
+    // } (10, 110));
+
+    // 箭头函数
+    // let f = (a, b) => a + b;
+    // console.log(f(10, 20));
+
+    // let x = (a, b) => {
+    //     let result = a + b;
+    //     return result;
+    // }
+    // console.log(f(10, 30));
+
+    // //this
+    // var str = "window"
+
+    // const obj = {
+    //     str: "obj",
+    //     nativeFn: function() {
+    //         console.log(this.str, "this");
+    //         return function() {
+    //             console.log("native", this.str);
+    //         }
+    //     }, 
+    //     arrowFn: function() {
+    //         console.log(this.str, "this");
+    //         return () => {
+    //             console.log("arrow", this.str);
+    //         }
+    //     }
+    // }
+
+    // const obj2 = {
+    //     str: "obj2"
+    // }
+
+    // var nativeFn = obj.nativeFn();
+    // var arrowFn = obj.arrowFn();
+
+    // nativeFn(); // window native，没有调用者默认指向window
+    // arrowFn(); // obj arrow，指向定义时的对象
+
+    // nativeFn.call(obj2); // obj2 native，调用者指向obj2
+    // arrowFn.call(obj2); // obj arrow，指向定义时的对象
+
+    // // Set Array
+    // let mySet = new Set(["value1", "value2", "value3"]);
+    // let myArray = [...mySet]; // 展开运算符
+
+    // console.log(mySet);
+    // console.log(myArray);
+
+    // Set
+    let mySet = new Set([1, 2, 3, 4, 5, 5, 5, 5]);
+    console.log(...mySet); // 1 2 3 4 5
+
+    let a = new Set([1, 2, 3]);
+    let b = new Set([3, 4, 5]);
+    let union = new Set([...a, ...b]); // 并集
+    console.log(union); // Set { 1, 2, 3, 4, 5 }
+
+    let intersect = new Set([...a].filter(x => b.has(x))); // 交集
+    console.log(intersect); // Set { 3 }
+
+
+
+</script>
+    
+</body>
+
+</html>
